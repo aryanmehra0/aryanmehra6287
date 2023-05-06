@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int *p1, *p2;
+
+    printf("Enter the values of a and b:\n");
+    scanf("%d %d", &a, &b);
+
+    printf("Before swapping: a = %d, b = %d\n", a, b);
+
+    p1 = &a;   // storing the address of a variable in p1
+    p2 = &b;   // storing the address of b variable in p2
+
+    *p1 = *p1 + *p2;  // adding the values stored at p1 and p2
+    *p2 = *p1 - *p2;  // subtracting the value of p2 from p1 and storing it in p2
+    *p1 = *p1 - *p2;  // subtracting the value of p2 from p1 and storing it in p1
+
+    printf("After swapping: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+

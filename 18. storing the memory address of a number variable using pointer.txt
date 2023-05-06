@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int num = 10;
+    int *p;
+
+    p = &num;  // storing the address of num variable using pointer
+
+    printf("The value of num is %d.\n", num);
+    printf("The address of num is %p.\n", &num);
+    printf("The value of p is %p.\n", p);
+    printf("The value stored at the address pointed by p is %d.\n", *p);
+
+    return 0;
+}

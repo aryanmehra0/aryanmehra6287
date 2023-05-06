@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr = (int*) malloc(sizeof(int));
+    *ptr = 42;
+    free(ptr);
+    printf("The value pointed to by the pointer is %d\n", *ptr);
+    return 0;
+}

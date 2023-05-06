@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int values[5];  
+    int i;
+
+    printf("Enter 5 integer values:\n");
+
+    
+    for(i = 0; i < 5; i++) {
+        printf("Value %d: ", i+1);
+        scanf("%d", &values[i]);
+    }
+
+    
+    printf("Values stored in the array are:\n");
+    for(i = 0; i < 5; i++) {
+        printf("%d\n", values[i]);
+    }
+
+    return 0;
+}

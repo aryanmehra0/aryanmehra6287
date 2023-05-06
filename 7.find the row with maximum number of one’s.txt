@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+#define MAX_ROWS 10
+#define MAX_COLS 10
+
+int main() {
+    int matrix[MAX_ROWS][MAX_COLS];
+    int rows, cols, i, j;
+    int max_row = -1, max_count = -1;
+
+    // prompt the user to enter the size of the matrix
+    printf("Enter the number of rows and columns of the matrix: ");
+    scanf("%d %d", &rows, &cols);
+
+    // prompt the user to enter the elements of the matrix
+    printf("Enter the elements of the matrix:\n");
+    for(i = 0; i < rows; i++) {
+        for(j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // find the row with the maximum number of ones
+    for(i = 0; i < rows; i++) {
+        int count = 0;
+        for(j = 0; j < cols; j++) {
+            if(matrix[i][j] == 1) {
+                count++;
+            }
+        }
+        if(count > max_count) {
+            max_count = count;
+            max_row = i;
+        }
+    }
+
+    // print the row with the maximum number of ones
+    printf("Row %d has the maximum number of ones: %d\n", max_row+1, max_count);
+
+    return 0;
+}
+ 

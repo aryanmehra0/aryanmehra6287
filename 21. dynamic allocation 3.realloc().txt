@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+   int size1, size2;
+   int *arr;
+
+   printf("Enter initial size of array: ");
+   scanf("%d", &size1);
+
+   // Allocate memory dynamically using malloc()
+   arr = (int*) malloc(size1 * sizeof(int));
+
+   // Check if memory allocation was successful
+   if(arr == NULL) {
+      printf("Memory allocation failed.");
+      exit(1);
+   }
+
+   // Input values into the dynamically allocated array
+   printf("Enter %d integers:\n", size1);
+   for(int i = 0; i < size1; i++) {
+      scanf("%d", &arr[i]);
+   }
+
+   // Display the elements of the dynamically allocated array
+   printf("Elements of array are:\n");
+   for(int i = 0; i < size1; i++) {
+      printf("%d ", arr[i]);
+   }
+
+   // Ask user for new size of array
+   printf("\nEnter new size of array: ");
+   scanf("%d", &size2);
+
+   // Reallocate memory using realloc()
+   arr = (int*) realloc(arr, size2 * sizeof(int));
+
+   // Check if memory reallocation was successful
+   if(arr == NULL) {
+      printf("Memory reallocation failed.");
+      exit(1);
+   }
+
+   // Input additional values into the dynamically allocated array
+   printf("Enter %d more integers:\n", size2-size1);
+   for(int i = size1; i < size2; i++) {
+      scanf("%d", &arr[i]);
+   }
+
+   // Display the updated elements of the dynamically allocated array
+   printf("Updated elements of array are:\n");
+   for(int i = 0; i < size2; i++) {
+      printf("%d ", arr[i]);
+   }
+
+   // Deallocate memory allocated by realloc()
+   free(arr);
+
+   return 0;
+}

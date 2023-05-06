@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *p = &arr[2];  // storing the address of the third element in p
+
+    printf("Value at p = %d\n", *p);
+    printf("Address of p = %p\n", p);
+
+
+    // increment operation
+    p++;
+    printf("After increment, value at p = %d\n", *p);
+    printf("After increment, address of p = %p\n", p);
+
+
+    // decrement operation
+    p--;
+    printf("After decrement, value at p = %d\n", *p);
+    printf("After decrement, address of p = %p\n", p);
+
+
+    // addition operation
+    p = p + 2;
+    printf("After addition, value at p = %d\n", *p);
+    printf("After addition, address of p = %p\n", p);
+
+
+    // subtraction operation
+    p = p - 1;
+    printf("After subtraction, value at p = %d\n", *p);
+    printf("After subtraction, address of p = %p\n", p);
+
+    return 0;
+}
